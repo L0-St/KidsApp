@@ -318,7 +318,7 @@ class VideoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(surah.name),
+        title: Text(surah.name,style: TextStyle(color: Colors.white),),
         backgroundColor: Color.fromARGB(221, 198, 166, 87),
         iconTheme: IconThemeData(color: Colors.white),
       ),
@@ -359,7 +359,7 @@ class VideoPage extends StatelessWidget {
                   return ListTile(
                     title: Text(
                       surah.ayat[index],
-                      style: TextStyle(fontSize: 16, color: const Color.fromARGB(221, 247, 245, 245)),
+                      style: TextStyle(fontSize: 16, color: const Color.fromARGB(221, 73, 71, 71)),
                     ),
                   );
                 },

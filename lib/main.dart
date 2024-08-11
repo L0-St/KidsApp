@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iti/splash.dart';
 import 'package:provider/provider.dart';
 import 'package:iti/draw.dart';
 import 'package:iti/first.dart';
@@ -10,10 +11,7 @@ import 'package:iti/theme_provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      child: MyApp(),
-    ),
+   MyApp(),
   );
 }
 
@@ -23,11 +21,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+   // final themeProvider = Provider.of<ThemeProvider>(context);
 
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: themeProvider.getTheme(),  // Use the theme from the ThemeProvider
+     // theme: themeProvider.getTheme(),  // Use the theme from the ThemeProvider
       debugShowCheckedModeBanner: false,
       home: First(),
     );

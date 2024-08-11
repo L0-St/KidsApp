@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iti/alphabet.dart';
 import 'package:iti/draw.dart';
+import 'package:iti/homepuzzle.dart';
 import 'package:iti/islamic.dart';
 import 'package:iti/learn1.dart';
 import 'package:iti/story.dart';
@@ -31,12 +32,12 @@ class Home extends StatelessWidget {
                     IconButton(
                       onPressed: () {
                          
-                   Navigator.push(context,
+                  /* Navigator.push(context,
                    MaterialPageRoute(
                     builder: (context) =>Themebutton(),
                   ),
                   
-                  );
+                  );*/
                   
                   },
                       
@@ -76,7 +77,17 @@ class Home extends StatelessWidget {
                         },
                         
                         child: Image.asset('images/letters.png', width: 250, height: 210)),
-                       Image.asset('images/puz.png', width: 250, height: 210),
+                       InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                   MaterialPageRoute(
+                    builder: (context) =>MainScreen(),
+                  ),
+                  
+                  );
+                        },
+                        
+                        child: Image.asset('images/puz.png', width: 250, height: 210)),
                   
                     
                 ],

@@ -4,8 +4,9 @@ import 'package:iti/model.dart';
 
 class StoryDetails extends StatefulWidget {
   final StoryModel story;
+  final String background;
 
-  const StoryDetails({Key? key, required this.story}) : super(key: key);
+  const StoryDetails({Key? key, required this.story, required this.background}) : super(key: key);
 
   @override
   State<StoryDetails> createState() => _StoryDetailsState();
@@ -19,34 +20,35 @@ class _StoryDetailsState extends State<StoryDetails> {
     if (verses.isEmpty) {
       loadSuraFile(widget.story.index);
     }
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/back_ground.jpg"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          title: Text(
-            widget.story.name,
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-              fontSize: 30,
-            ),
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color.fromARGB(255, 166, 99, 195),
+        centerTitle: true,
+        title: Text(
+          widget.story.name,
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+            fontSize: 30,
           ),
         ),
-        body: ListView.builder(
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(widget.background),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: ListView.builder(
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 verses[index],
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white),
               ),
             );
           },
