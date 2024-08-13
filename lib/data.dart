@@ -14,19 +14,19 @@ class cardinfo{
 List<cardinfo> cardlist =[
   cardinfo(1,
   text: "Alphabet",
-  image: "images/alphabetical.png"),
+  image: "assets/images/alphabetical.png"),
   cardinfo(2,
       text: "Puzzle",
-      image: "images/puzzle.png"),
+      image: "assets/images/puzzle.png"),
   cardinfo(3,
       text: "Painting",
-      image: "images/paint (1).png"),
+      image: "assets/images/paint (1).png"),
   cardinfo(4,
       text: "Stories",
-      image: "images/movie.png"),
+      image: "assets/images/movie.png"),
   cardinfo(5,
       text: "Religion",
-      image: "images/praying.png")
+      image: "assets/images/praying.png")
 
 ];
 final List<Widget> screenslist = [

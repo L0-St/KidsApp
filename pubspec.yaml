@@ -43,6 +43,11 @@ dependencies:
   shared_preferences: ^2.2.3
   get: ^4.6.6
   provider: ^6.1.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  dio: ^5.5.0+1
+  flutter_bloc: ^8.1.6
+
   
   
 
@@ -56,6 +61,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.11
+  dependency_validator: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -70,7 +78,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+    - assets/images/
+    - assets/images/letters/
+    - assets/images/numbers/
+    - assets/images/shapes/
     - files/
   #   - images/a_dot_ham.jpeg
 

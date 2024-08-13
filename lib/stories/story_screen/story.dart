@@ -1,0 +1,133 @@
+import 'package:flutter/material.dart';
+import 'package:iti/stories/model/model.dart';
+import 'package:iti/stories/sub_screens/storydetail.dart';
+
+class Story extends StatelessWidget {
+  static const String routeName = 'home';
+
+  List<Map<String, String>> stories = [
+    {
+      "name": "الأسد والفأر",
+      "image": "assets/images/lion.jpeg",
+      "background": "assets/images/lion.jpeg"
+    },
+    {
+      "name": "الثعلب ف حقل العنب",
+      "image": "assets/images/fox.jpeg",
+      "background": "assets/images/fox.jpeg"
+    },
+    {
+      "name": "الحمار الأحمق",
+      "image": "assets/images/donkey.jpeg",
+      "background": "assets/images/donkey.jpeg"
+    },
+    {
+      "name": "الراعي الكذاب",
+      "image": "assets/images/shepherd.jpeg",
+      "background": "assets/images/shepherd.jpeg"
+    },
+    {
+      "name": "الصياد والسمكة الصغيره",
+      "image": "assets/images/fisherman_and_fish.jpeg",
+      "background": "assets/images/fisherman_and_fish.jpeg"
+    },
+    {
+      "name": "الصيصان السبعه",
+      "image": "assets/images/seven_chicks.jpeg",
+      "background": "assets/images/seven_chicks.jpeg"
+    },
+    {
+      "name": "الغراب العطشان",
+      "image": "assets/images/thirsty_crow.jpeg",
+      "background": "assets/images/thirsty_crow.jpeg"
+    },
+    {
+      "name": "الكلب الطماع",
+      "image": "assets/images/greedy_dog.jpeg",
+      "background": "assets/images/greedy_dog.jpeg"
+    },
+    {
+      "name": "الولد الكسول",
+      "image": "assets/images/lazy_boy.jpeg",
+      "background": "assets/images/lazy_boy.jpeg"
+    },
+    {
+      "name": "قصة الماعزان",
+      "image": "assets/images/two_goats.jpeg",
+      "background": "assets/images/two_goats.jpeg"
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 212, 193, 220),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color.fromARGB(255, 166, 99, 195),
+        title: Text('Stories', style: TextStyle(color: Colors.white)),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset("assets/images/story.png"),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, bottom: 15),
+            child: Text(
+              "تمتع معنا باجمل القصص",
+              style: TextStyle(
+                color: Color.fromARGB(255, 166, 99, 195),
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                final story = stories[index];
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StoryDetails(
+                          story: StoryModel(index, story['name']!),
+                          background: story['background']!,
+                        ),
+                      ),
+                    );
+                  },
+                  child: ListTile(
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Container(
+                          height: MediaQuery.sizeOf(context).height*0.1,
+                          width: MediaQuery.sizeOf(context).width*0.2,
+                          child: Image.asset(story['image']!)
+                      ),
+                    ),
+                    title: Text(
+                      story['name']!,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                );
+              },
+              itemCount: stories.length,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
