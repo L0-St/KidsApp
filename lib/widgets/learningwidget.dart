@@ -40,7 +40,7 @@ class _LearningWidgetState extends State<LearningWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                        height: MediaQuery.sizeOf(context).height*0.033,
+                        height: MediaQuery.sizeOf(context).height*0.01,
                     ),
                     InkWell(
                       onTap: () {

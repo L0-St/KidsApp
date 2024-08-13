@@ -53,14 +53,19 @@ class Home extends StatelessWidget {
                 height: MediaQuery.sizeOf(context).height * 0.03,
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 270.0),
-                child: Text(
-                  "Hello Kids",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Color.fromARGB(255, 176, 136, 183),
-                  ),
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Hello Kids",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        color: Color.fromARGB(255, 176, 136, 183),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(

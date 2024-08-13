@@ -61,13 +61,13 @@ class _LettersScreenState extends State<LettersScreen> {
                       padding: EdgeInsets.only(top: 120),
                       child: Image.asset(lettersImage[index!],
                         height:  MediaQuery.sizeOf(context).height*0.26,
-                        width: MediaQuery.sizeOf(context).width * 0.59,
+                        width: MediaQuery.sizeOf(context).width * 0.5,
                       ),
                     ),
                     Text(
                       "( ${lettersList[index!]} = ${wordsList[index!]} )",
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 23,
                         color: Colors.grey,
                       ),
                     ),
