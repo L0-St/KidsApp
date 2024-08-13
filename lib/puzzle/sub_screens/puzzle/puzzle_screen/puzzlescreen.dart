@@ -85,17 +85,17 @@ class PuzzleScreen extends StatelessWidget {
           children: [
             _buildContainer(
               image: "assets/images/abc.png",
-              text: "Connect each letter to the \n appropriate word ",
+              text: "Connect each letter \nto the appropriate word ",
               newScreen: LettersPuzzle(),
             ),
             _buildContainer(
               image: "assets/images/numbers.png",
-              text: "Connect each number to the\n appropriate word ",
+              text: "Connect each number \nto the appropriate word ",
               newScreen: NumbersPuzzle(),
             ),
             _buildContainer(
               image: "assets/images/shapes.png",
-              text: "Connect each shape to the \n appropriate word ",
+              text: "Connect each shape \nto the appropriate word ",
               newScreen: ShapesPuzzle(),
             ),
           ],

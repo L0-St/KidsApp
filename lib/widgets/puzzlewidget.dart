@@ -100,7 +100,7 @@ class _PuzzleWidgetState extends State<PuzzleWidget> {
                     data: item,
                     child: Container(
                       alignment: Alignment.center,
-                      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5.5),
                       height: MediaQuery.sizeOf(context).height * 0.0562,
                       width: MediaQuery.sizeOf(context).width * 0.12,
                       child: Image.asset(item.image!),
@@ -172,7 +172,7 @@ class _PuzzleWidgetState extends State<PuzzleWidget> {
                           Container(
                             alignment: Alignment.center,
                             margin: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
+                                 horizontal: 5,vertical: 10),
                             height: MediaQuery.sizeOf(context).height*0.0449,
                             width: MediaQuery.sizeOf(context).width*0.29,
                             decoration: BoxDecoration(
