@@ -1,31 +1,31 @@
 // letters details
 List lettersImage = [
-  "assets/images/letters/letter-a.png",
-  "assets/images/letters/letter-b.png",
-  "assets/images/letters/letter-c.png",
-  "assets/images/letters/letter-d.png",
-  "assets/images/letters/letter-e.png",
-  "assets/images/letters/letter-f.png",
-  "assets/images/letters/letter-g.png",
-  "assets/images/letters/letter-h.png",
-  "assets/images/letters/letter-i.png",
-  "assets/images/letters/letter-j.png",
-  "assets/images/letters/letter-k.png",
-  "assets/images/letters/letter-l.png",
-  "assets/images/letters/letter-m.png",
-  "assets/images/letters/letter-n.png",
-  "assets/images/letters/letter-o.png",
-  "assets/images/letters/letter-p.png",
-  "assets/images/letters/letter-q.png",
-  "assets/images/letters/letter-r.png",
-  "assets/images/letters/letter-s.png",
-  "assets/images/letters/letter-t.png",
-  "assets/images/letters/letter-u.png",
-  "assets/images/letters/letter-v.png",
-  "assets/images/letters/letter-w.png",
-  "assets/images/letters/letter-x.png",
-  "assets/images/letters/letter-y.png",
-  "assets/images/letters/letter-z.png",
+  "assets/images/lettersv/a.png",
+  "assets/images/lettersv/b.png",
+  "assets/images/lettersv/c.png",
+  "assets/images/lettersv/d.png",
+  "assets/images/lettersv/e.png",
+  "assets/images/lettersv/f.png",
+  "assets/images/lettersv/g.png",
+  "assets/images/lettersv/h.png",
+  "assets/images/lettersv/i.png",
+  "assets/images/lettersv/j.png",
+  "assets/images/lettersv/k.png",
+  "assets/images/lettersv/l.png",
+  "assets/images/lettersv/m.png",
+  "assets/images/lettersv/n.png",
+  "assets/images/lettersv/o.png",
+  "assets/images/lettersv/p.png",
+  "assets/images/lettersv/q.png",
+  "assets/images/lettersv/r.png",
+  "assets/images/lettersv/s.png",
+  "assets/images/lettersv/t.png",
+  "assets/images/lettersv/u.png",
+  "assets/images/lettersv/v.png",
+  "assets/images/lettersv/w.png",
+  "assets/images/lettersv/x.png",
+  "assets/images/lettersv/y.png",
+  "assets/images/lettersv/z.png",
 ];
 
 List lettersList = [
@@ -77,7 +77,7 @@ List wordsList = [
   "QUEEN", //queen
   "RULER", //ruler
   "STAR", //star
-  "TREE", //tree
+  "TOMATOES", //Tomatoes
   "UMBRELLA", //umbrella
   "VASE", //vase
   "WATCH", //watch
