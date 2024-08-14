@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:iti/home/home1.dart';
 import 'package:iti/login/extension/email_valid.dart';
 
-import '../../register/register_screen/register_screen.dart';
+import '../../home/home1.dart';
 import '../../widgets/custom_text_form.dart';
-import '../cubit/login_cubit.dart';
+import '../cubit/register_cubit.dart';
 
-class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final _key = GlobalKey<FormState>();
+
+  final TextEditingController _nameController = TextEditingController();
+
+  final TextEditingController _phoneController = TextEditingController();
 
   final TextEditingController _emailController = TextEditingController();
 
@@ -26,12 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Form(
       key: _key,
-      child: BlocListener<LoginCubit, LoginState>(
+      child: BlocListener<RegisterCubit, RegisterState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
+          if (state is RegisterSuccess) {
             Get.offAll(Home());
           }
-          if (state is LoginError) {
+          if (state is RegisterError) {
             Get.snackbar("error", state.message,
                 backgroundColor: Colors.red, colorText: Colors.white);
           }
@@ -47,12 +50,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       Image.asset(
-                        "assets/images/playtime.png",
+                        "assets/images/chase.png",
                         height:  MediaQuery.sizeOf(context).height*0.225,
                         width: MediaQuery.sizeOf(context).width*0.5,
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height*0.068,
+                      ),
+                      customTextFormField(
+                          text: "Name",
+                          controller: _nameController,
+                          validator: (value) {
+                            if (value!.isEmpty)
+                              return "Please enter a valid password";
+                          }
                       ),
                       customTextFormField(
                           text: "Email",
@@ -63,6 +74,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                           }),
                       customTextFormField(
+                          text: "Phone",
+                          controller: _phoneController,
+                          validator: (value) {
+                            if (value!.isEmpty)
+                              return "Please enter a valid name";
+                          }
+                      ),
+                      customTextFormField(
                           text: "Password",
                           isPassword: true,
                           controller: _passwordController,
@@ -71,23 +90,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               return "Please enter a valid password";
                             }
                           }),
-                      Row(
-                        children: [
-                          Spacer(),
-                          Text(
-                            "Forget Password?",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
-                          )
-                        ],
-                      ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height*0.034,
                       ),
                       InkWell(
                         onTap: () {
                           if (_key.currentState!.validate()) {
-                            context.read<LoginCubit>().login(
+                            context.read<RegisterCubit>().register(
+                                name:_nameController.text ,
+                                phone: _phoneController.text,
                                 email: _emailController.text,
                                 password: _passwordController.text);
                             print("=============>${_emailController.text}");
@@ -101,15 +112,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(80),
                           ),
                           child: Center(
-                            child: BlocBuilder<LoginCubit, LoginState>(
+                            child: BlocBuilder<RegisterCubit, RegisterState>(
                               builder: (context, state) {
-                                if (state is LoginLoading) {
+                                if (state is RegisterLoading) {
                                   return CircularProgressIndicator(
                                     color: Colors.white,
                                   );
                                 }
                                 return Text(
-                                  "GO",
+                                  "Register",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 30,
@@ -120,42 +131,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: MediaQuery.sizeOf(context).height*0.034,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Don't have account yet?",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
-                          ),
-
-                          // TODO : Go to register Screen
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                        (RegisterScreen())),
-                                        (Route<dynamic> route) => false);
-                              },
-                              child: Text(
-                                "Sign Up",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Color(0xFF2EB892),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
                     ],
                   ),
                 ),
