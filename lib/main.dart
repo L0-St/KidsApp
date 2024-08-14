@@ -15,6 +15,7 @@ import 'package:iti/religion/sub_screens/quran_screen/qran.dart';
 import 'package:iti/theme/theme_provider.dart';
 
 import 'helpers/hive_helper.dart';
+import 'register/cubit/register_cubit.dart';
 import 'splash/splash_screen.dart';
 
 void main() async{
@@ -33,8 +34,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // final themeProvider = Provider.of<ThemeProvider>(context);
 
-    return BlocProvider(
-      create: (context) => LoginCubit(),
+    return   MultiBlocProvider(providers: [
+      BlocProvider(create: (context) => LoginCubit()),
+      BlocProvider(create: (context) => RegisterCubit()),
+    ],
       child: GetMaterialApp(
         title: 'Flutter Demo',
         // theme: themeProvider.getTheme(),  // Use the theme from the ThemeProvider
