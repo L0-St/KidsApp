@@ -9,59 +9,59 @@ class Story extends StatelessWidget {
     {
       "name": "الأسد والفأر",
       "image": "assets/images/lion.jpeg",
-      "background": "assets/images/lion.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الثعلب ف حقل العنب",
       "image": "assets/images/fox.jpeg",
-      "background": "assets/images/fox.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الحمار الأحمق",
       "image": "assets/images/donkey.jpeg",
-      "background": "assets/images/donkey.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الراعي الكذاب",
       "image": "assets/images/shepherd.jpeg",
-      "background": "assets/images/shepherd.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الصياد والسمكة الصغيره",
       "image": "assets/images/fisherman_and_fish.jpeg",
-      "background": "assets/images/fisherman_and_fish.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الصيصان السبعه",
       "image": "assets/images/seven_chicks.jpeg",
-      "background": "assets/images/seven_chicks.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الغراب العطشان",
       "image": "assets/images/thirsty_crow.jpeg",
-      "background": "assets/images/thirsty_crow.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الكلب الطماع",
       "image": "assets/images/greedy_dog.jpeg",
-      "background": "assets/images/greedy_dog.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "الولد الكسول",
       "image": "assets/images/lazy_boy.jpeg",
-      "background": "assets/images/lazy_boy.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
     {
       "name": "قصة الماعزان",
       "image": "assets/images/two_goats.jpeg",
-      "background": "assets/images/two_goats.jpeg"
+      "background": "assets/images/S_1.jpeg"
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 212, 193, 220),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Color.fromARGB(255, 166, 99, 195),
@@ -72,7 +72,7 @@ class Story extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Image.asset("assets/images/story.png"),
+            child: Image.asset("assets/images/children.jpg"),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10.0, bottom: 15),
@@ -117,7 +117,7 @@ class Story extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
-                        color: Colors.white,
+                        color: Colors.purple,
                       ),
                     ),
                   ),

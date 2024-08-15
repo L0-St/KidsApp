@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:iti/login/extension/email_valid.dart';
+import 'package:iti/login/login_screen/login_screen.dart';
 
 import '../../home/home1.dart';
 import '../../widgets/custom_text_form.dart';
@@ -32,7 +33,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: BlocListener<RegisterCubit, RegisterState>(
         listener: (context, state) {
           if (state is RegisterSuccess) {
-            Get.offAll(Home());
+            Get.snackbar("Success", state.message,
+                backgroundColor: Colors.green, colorText: Colors.white);
+            Get.offAll(LoginScreen());
           }
           if (state is RegisterError) {
             Get.snackbar("error", state.message,
@@ -45,7 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             onTap: FocusScope.of(context).unfocus,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(top: 150.0, right: 16, left: 16),
+                padding: const EdgeInsets.only(top: 80.0, right: 16, left: 16),
                 child: Center(
                   child: Column(
                     children: [
@@ -91,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             }
                           }),
                       SizedBox(
-                        height: MediaQuery.sizeOf(context).height*0.034,
+                        height: MediaQuery.sizeOf(context).height*0.05,
                       ),
                       InkWell(
                         onTap: () {
@@ -108,7 +111,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           width: double.infinity,
                           height: MediaQuery.sizeOf(context).height*0.068,
                           decoration: BoxDecoration(
-                            color: Color(0xFFEB9F4A),
+                            color: Color(0xFF8F4BF0),
                             borderRadius: BorderRadius.circular(80),
                           ),
                           child: Center(

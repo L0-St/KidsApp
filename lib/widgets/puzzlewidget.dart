@@ -95,7 +95,7 @@ class _PuzzleWidgetState extends State<PuzzleWidget> {
             Column(
               children: items.map((item) {
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
                   child: Draggable<ItemModel>(
                     data: item,
                     child: Container(
@@ -172,9 +172,9 @@ class _PuzzleWidgetState extends State<PuzzleWidget> {
                           Container(
                             alignment: Alignment.center,
                             margin: EdgeInsets.symmetric(
-                                 horizontal: 5,vertical: 10),
+                                 horizontal: 3,vertical: 10),
                             height: MediaQuery.sizeOf(context).height*0.0449,
-                            width: MediaQuery.sizeOf(context).width*0.29,
+                            width: MediaQuery.sizeOf(context).width*0.33,
                             decoration: BoxDecoration(
                               color: item.accepting
                                   ? Colors.blue

@@ -48,7 +48,7 @@ class _StoryDetailsState extends State<StoryDetails> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 verses[index],
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 18, color: Colors.purple),
               ),
             );
           },

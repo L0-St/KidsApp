@@ -63,10 +63,36 @@ class MyWidget extends StatelessWidget {
                   _buildContainer1(context,
                       image: 'assets/images/Group x.png', nextScreen: Shapes()),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height*0.025,
+                    height: MediaQuery.sizeOf(context).height*0.05,
                   ),
-                  _buildContainer1(context,
-                      image: 'assets/images/animal.png', nextScreen: Animals()),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Animals(),));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xFF91BDED),
+                        borderRadius: BorderRadius.circular(12)
+                      ),
+
+                      margin: EdgeInsets.symmetric(horizontal: 27,vertical: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 35,vertical: 5),
+                      height:MediaQuery.sizeOf(context).height*0.095,
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/images/dolphin.png"),
+                          SizedBox(width:MediaQuery.sizeOf(context).width*0.09),
+                          Text("animals",style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold
+                          ),)
+
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ))
